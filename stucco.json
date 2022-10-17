@@ -1,0 +1,34 @@
+{
+  "resolvers": {
+    "Query.restProxy": {
+      "name": "Proxy",
+      "description": "Proxy your rest endpoint to GraphQL Schema",
+      "data": {
+        "headers": {
+          "name": "Request headers",
+          "description": "Insert request headers for REST",
+          "value": ["Authorization:Dupa"]
+        },
+        "body": {
+          "name": "REST endpoint body",
+          "description": "REST endpoint body serialized as JSON.",
+          "value": ""
+        },
+        "url": {
+          "name": "REST endpoint",
+          "description": "REST endpoint to map to. Accepts values with $ at the beginning from the GraphQL Query.",
+          "value": "https://jsonplaceholder.typicode.com/todos",
+          "required": true
+        },
+        "method": {
+          "name": "method",
+          "description": "GET, POST, PUT etc.",
+          "value": "GET"
+        }
+      },
+      "resolve": {
+        "name": "lib/rest"
+      }
+    }
+  }
+}
