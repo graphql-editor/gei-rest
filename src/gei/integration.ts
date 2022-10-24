@@ -20,6 +20,11 @@ const integration: IntegrationSpecification = {
     name: 'Proxy',
     description: 'Proxy your rest endpoint to GraphQL Schema',
     data: {
+      passedHeaders: {
+        name: 'Passed headers',
+        description: 'Names of headers to pass from `/graphql` request to rest proxy',
+        value: [],
+      },
       headers: {
         name: 'Request headers',
         description: 'Insert request headers for REST',

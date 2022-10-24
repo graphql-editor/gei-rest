@@ -8,5 +8,7 @@
     "backendSrc": "./src",
     "backendLib": "./lib",
     "schemaDir": "./",
-    "integrationPath": "src/gei/integration.ts"
+    "integrationPath": "src/gei/integration.ts",
+    "registry": "https://registry.npmjs.org/",
+    "npmPackage": "gei-rest"
 }

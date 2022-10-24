@@ -4,10 +4,15 @@
       "name": "Proxy",
       "description": "Proxy your rest endpoint to GraphQL Schema",
       "data": {
+        "passedHeaders": {
+          "name": "Passed headers",
+          "description": "Names of headers to pass from `/graphql` request to rest proxy",
+          "value": []
+        },
         "headers": {
           "name": "Request headers",
-          "description": "Insert request headers for REST",
-          "value": ["Authorization:Dupa"]
+          "description": "Insert request headers for REST in format Key:Value",
+          "value": []
         },
         "body": {
           "name": "REST endpoint body",
@@ -17,7 +22,7 @@
         "url": {
           "name": "REST endpoint",
           "description": "REST endpoint to map to. Accepts values with $ at the beginning from the GraphQL Query.",
-          "value": "https://jsonplaceholder.typicode.com/todos",
+          "value": "",
           "required": true
         },
         "method": {
