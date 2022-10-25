@@ -16,11 +16,11 @@ export const handler = async (input: FieldResolveInput) =>
       throw new Error('Invalid resolver data');
     }
     const { url, body, headers, method = { value: 'GET' } } = data;
-
+    let urlVal = url.value;
     const inputs = input.arguments;
     if (inputs) {
       Object.keys(inputs).forEach((inputName) => {
-        url.value = url.value.replace(`\$${inputName}`, inputs[inputName] + '');
+        urlVal = url.value.replace(`\$${inputName}`, inputs[inputName] + '');
         if (body) body.value = body.value?.replace(`\$${inputName}`, inputs[inputName] + '');
       });
     }
@@ -42,7 +42,7 @@ export const handler = async (input: FieldResolveInput) =>
         };
       }, {});
 
-    const response = await fetch(url.value, {
+    const response = await fetch(urlVal, {
       headers: {
         ...headersComputed,
         ...addHeaders,

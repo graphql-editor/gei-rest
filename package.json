@@ -1,6 +1,6 @@
 {
   "name": "gei-rest",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "GraphQL Editor Rest Proxy integration",
   "main": "lib/index.js",
   "scripts": {
